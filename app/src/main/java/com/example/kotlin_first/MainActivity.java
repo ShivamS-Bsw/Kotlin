@@ -25,5 +25,15 @@ public class MainActivity extends AppCompatActivity {
                 //TODO:Getting Error : enclosing a inner class
 //                InnerClass.Inner name = new InnerClass.Inner();
 
+        openDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Dialog1 dialog1 = new Dialog1(MainActivity.this);
+                dialog1.show();
+
+            }
+        });
+
     }
 }

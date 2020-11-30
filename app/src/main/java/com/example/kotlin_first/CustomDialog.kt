@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 
-class CustomDialog(context: Context) : Dialog(context) {
+abstract class CustomDialog(context: Context) : Dialog(context) {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,11 +18,15 @@ class CustomDialog(context: Context) : Dialog(context) {
         val negativeButton = findViewById<Button>(R.id.dialog_negative_button);
 
         positiveButton.setOnClickListener(){
-            Toast.makeText(context, "Positive Clicked", Toast.LENGTH_SHORT).show()
+            onPositiveClick();
         }
 
         negativeButton.setOnClickListener(){
-            Toast.makeText(context, "Negative Clicked", Toast.LENGTH_SHORT).show()
+           onNegativeClick();
         }
     }
+
+    abstract fun onPositiveClick();
+    abstract fun onNegativeClick();
+
 }
