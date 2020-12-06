@@ -1,10 +1,13 @@
 package com.example.kotlin_first;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.kotlin_first.second_assignment.Frgment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container,new Frgment(),null).commit();
 
         openDialog = findViewById(R.id.button);
                 System.out.println(SingletonClass.INSTANCE.getDetails());

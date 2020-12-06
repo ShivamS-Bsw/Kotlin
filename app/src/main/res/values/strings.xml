@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Kotlin-First</string>
+    <string name="temp_string">Kotlin Assignment</string>
 </resources>
